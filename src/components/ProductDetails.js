@@ -16,10 +16,10 @@ const ProductDetails =(props)=>{
     return (
       <div> 
             
-            <Jumbotron fluid className='sizejumbotron2'>
+            <Jumbotron fluid className='sizejumbotron2 text-dark'>
             <Container fluid>
                 <h1 className="display-5 mt-5">{props.product.name}</h1>
-                <p className="lead">{props.product.description}</p>
+                <p className="lead ml-5 mr-5">{props.product.description}</p>
             </Container>
             </Jumbotron> 
                 <div className="row btngroup">

@@ -13,31 +13,25 @@ function RenderProductItem ({product}) {
     return (
         <Fade>
         <Card className='card-primary'>
-                <Link to={`/product2/${product.id}`} >
-                  <CardImg width="100%"className='cardimg' src={baseUrl+ product.image} alt={baseUrl+ product.name} />
+            <Link to={`/product2/${product.id}`} >
+                <CardImg width="100%"className='cardimg' src={baseUrl+ product.image} alt={baseUrl+ product.name} />
 
-                  <CardImgOverlay className="product-name">
-                      <CardTitle>{product.name}</CardTitle>
-                  </CardImgOverlay>
-                  <CardBody className='card-text'>
-                        <CardText>{product.description}</CardText>
-                   </CardBody>
-                </Link>                   
-                </Card>
+                <CardImgOverlay className="product-name">
+                    <CardTitle>{product.name}</CardTitle>
+                </CardImgOverlay>
+            </Link>            
+            <CardBody className='card-text'>
+                <CardText>{product.description}</CardText>
+           </CardBody>
+        </Card>
         </Fade>
     );
 };
 const JumbotronUse =(props)=>{
     return(
-                <Jumbotron className="sizejumbotron1">
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                            
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
+        <Jumbotron fluid className="m-0 bg-cover bg-cover-category text-white text-center">
+            <h1 className="pt-5"><strong>Categories</strong></h1>
+        </Jumbotron>
     )
 }
 
@@ -47,9 +41,9 @@ const Content =(props)=>{
             {/* <div className='col-12 col-md-2 '></div> */}
             <div className='col col-md-4'>
             <span className='icon'>
-                <h2 className='product-cat'><strong>Tiles Catagories</strong></h2>
+                <h2 className='product-cat'><strong>Tiles Categories</strong></h2>
                 {/* <br/> Catagories by Tile Types</h2> */}
-                <h4 className='product-type'>Catagories by Tile Size</h4></span>
+                <h4 className='product-type'>Categories by Tile Size</h4></span>
             </div>
         </div>
         )
@@ -84,7 +78,6 @@ function Product2(props){
                 <div className='container'> 
                 <div className="row">
                         <Breadcrumb>
-
                             <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                             <BreadcrumbItem active>Tile Size</BreadcrumbItem>
                         </Breadcrumb>                

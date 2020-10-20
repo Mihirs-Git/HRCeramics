@@ -8,15 +8,9 @@ import {
 
 const JumbotronUse =(props)=>{
     return(
-                <Jumbotron className="jumbotron1">
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                            
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
+        <Jumbotron fluid className="bg-cover bg-cover-gallery text-white text-center">
+            <h1 className="pt-5"><strong>Gallery</strong></h1>
+        </Jumbotron>
     )
 }
 
@@ -25,8 +19,9 @@ const Content =(props)=>{
         <div className='row'>
             <div className='col col-md-4'>
             <span className='icon'>
-                <h2 className='product-cat'><strong>SHOP Delineation</strong></h2>
-                <h4 className='product-type'>Details</h4></span>
+                <h2 className='product-cat mb-5'><strong>Shop Delineation</strong></h2>
+                {/* <h4 className='product-type'>Details</h4> */}
+                </span>
             </div>
         </div>
         )

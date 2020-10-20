@@ -149,7 +149,8 @@ class Contact extends Component
                 <div className="container">
                     <div className="row">
                         <div className="col-12 mt-5 pt-5 mb-5 pl-4 pl-md-0">                    
-                            <h2>Ways to contact us</h2>    
+                            <h2>Ways to contact us</h2>
+                            <hr></hr>    
                         </div>    
                     </div>    
                     
@@ -306,17 +307,17 @@ class Contact extends Component
                     
                     
 
-                    <div className="row p-2 m-3">
-                        <div className="col-12 col-lg-4 p-1">
+                    <div className="row p-2 m-5 text-center">
+                        <div className="col-12 col-lg-6 p-1">
                             <h3>
                                 <Badge color="danger" href="mailto: hrceramics@gmail.com?subject=Query: HR Ceramics&body=Write your query here..." className="p-3" pill>
                                     <span className="fa fa-envelope"> 
-                                        {' '}E-mail / <em>hrceramics@gmail.com</em>
+                                        {' '}E-mail / <em>hrceramics2020@yahoo.com</em>
                                     </span>
                                 </Badge>
                             </h3>
                         </div>
-                        <div className="col-12 col-lg-4 p-1">
+                        <div className="col-12 col-lg-6 p-1">
                             <h3>
                                 <Badge color="success" href="https://www.instagram.com/hrceramic_granite/" className="p-3" pill>
                                     <span className="fa fa-instagram">
@@ -325,7 +326,9 @@ class Contact extends Component
                                 </Badge>
                             </h3>
                         </div>
-                        <div className="col-12 col-lg-4 p-1">
+                    </div>
+                    <div className="row p-2 m-5 text-center">
+                        <div className="col-12 col-lg-12 p-1">
                             <h3>
                                 <Badge color="primary" className="p-3" pill>
                                     <span className="fa fa-phone">
@@ -335,6 +338,7 @@ class Contact extends Component
                             </h3>
                         </div>
                     </div>
+
                     <div className="row pt-5">
                         <div className="col-12 text-center pb-3">
                             <a className="btn btn-outline-success btn-md pb-2" href="https://www.google.co.in/maps/dir//21.71525,73.0206944/@21.7152073,73.0206138,21z?hl=en-GB">

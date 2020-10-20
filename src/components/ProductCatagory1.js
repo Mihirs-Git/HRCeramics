@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardImgOverlay, Button,Jumbotron, Container, Breadcrumb, BreadcrumbItem
+    CardTitle, CardImgOverlay, Button,Jumbotron, Container, Breadcrumb, BreadcrumbItem, CardHeader
   } from 'reactstrap';
   import { Link } from 'react-router-dom';
   import { Loading } from './LoadingComponent';
@@ -12,34 +12,27 @@ import { baseUrl } from '../shared/baseUrl';
 function RenderProductItem ({product}) {
     
     return (
-        <Fade delay={1000}>
-        <Card className='card-primary'>
-                <Link to={`/product1/${product.id}`} >
-                  <CardImg width="100%"className='cardimg'  src={baseUrl+ product.image} alt={baseUrl+ product.name} />
-
-                  <CardImgOverlay className="product-name">
-                      <CardTitle>{product.name}</CardTitle>
-                  </CardImgOverlay>
-                  <CardBody className='card-text'>
-                        <CardText>{product.description}</CardText>
-                   </CardBody>
-                </Link>                   
-                </Card>
+        <Fade delay={1000} triggerOnce>
+            <Card className='card-primary'>
+                <Link className="product-category1-link" to={`/product1/${product.id}`} >
+                    <CardImg width="100%" className='cardimg' src={baseUrl+ product.image} alt={baseUrl+ product.name} />
+                    <CardImgOverlay className="product-name">
+                        <CardTitle>{product.name}</CardTitle>
+                    </CardImgOverlay>    
+                </Link>
+                <CardBody className='card-text'>
+                    <CardText>{product.description}</CardText>
+                </CardBody>                   
+            </Card>
         </Fade >
     );
 };
 
 const JumbotronUse =({isLoading,errMess})=>{
     return(
-                <Jumbotron className='jumbotron1'>
-                        <div className="container">
-                            <div className="row row-header">
-                                <div className="col-12 col-sm-6">
-                                </div>
-                                {/* <h1 className="text-white text-center display-5 text-margin">Tile Types</h1> */}
-                            </div>
-                        </div>
-                </Jumbotron>
+        <Jumbotron fluid className="bg-cover bg-cover-category text-white text-center">
+            <h1 className="pt-5"><strong>Categories</strong></h1>
+        </Jumbotron>
     )
 }
 
@@ -49,9 +42,9 @@ const Content =(props)=>{
             {/* <div className='col-12 col-md-2 '></div> */}
             <div className='col col-md-4'>
             <span className='icon'>
-                <h2 className='product-cat'><strong>Tiles Catagories</strong></h2>
+                <h2 className='product-cat'><strong>Tiles Categories</strong></h2>
                 {/* <br/> Catagories by Tile Types</h2> */}
-                <h4 className='product-type'>Catagories by Tile Types</h4></span>
+                <h4 className='product-type'>Categories by Tile Types</h4></span>
             </div>
         </div>
         )
@@ -87,7 +80,6 @@ function Product1(props){
                     <div className='container'>  
                     <div className="row">
                         <Breadcrumb>
-
                             <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                             <BreadcrumbItem active>Tile Types</BreadcrumbItem>
                         </Breadcrumb>                
@@ -97,15 +89,15 @@ function Product1(props){
                         {product}
                     </div>
                 </div>
-                <Jumbotron fluid className="text-center bg-cover mt-5 mb-5 jumbotron4"> 
+                <Jumbotron fluid className="text-center bg-cover mt-5 mb-0 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
-                    <Button color="primary" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white">Explore by type</Button>
+                        <Button color="primary" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white">Explore by type</Button>
                     </Link>
                     <Link to={`/product2/`} >
-                    <Button color="primary" size="lg" outline className="ml-md-5 text-white">Explore by size</Button>
+                        <Button color="primary" size="lg" outline className="ml-md-5 text-white">Explore by size</Button>
                     </Link>
-                    </Jumbotron>
+                </Jumbotron>
                 </div>
     
             )

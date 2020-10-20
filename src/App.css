@@ -41,12 +41,14 @@
 }
 
 .card-tabs{
-  font-size: 50px;
-  color: #635b5b;
+  font-size: xx-large;
+  /* color: #635b5b; */
+  color: #ffffff;
 }
 .card-desc{
-  color: rgb(70, 66, 66);
-  font-size: 15px;
+  color: #ffffff;
+  /* color: rgb(70, 66, 66); */
+  font-size: large;
 }
 
 .card-bg{
@@ -93,10 +95,11 @@
 .sizejumbotron2{
   text-align: center;
   color: aliceblue;
-  background-image: url('/assets/silver.jpg');
+  background-image: url('/assets/backgroundforloading.jpg');
   /* background-color: #1f1d1d; */
   /* background-color:rgb(148, 145, 145); */
   margin-bottom: 0;
+  padding: 5%;
 }
 
 
@@ -197,6 +200,26 @@ margin-bottom: 50px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("/assets/sample.jpg");
 }
 
+.bg-cover-category
+{
+  background-position: right;
+  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.75)), url("/assets/shop-category-2.jpg");
+  max-width: 100%;
+  height: auto;
+  font-family: 'Segoe Print', 'Segoe UI', sans-serif;
+  padding: 10%;
+}
+
+.bg-cover-gallery
+{
+  background-position: right;
+  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.75)), url("/assets/shop-gallery.jpg");
+  max-width: 100%;
+  height: auto;
+  font-family: 'Segoe Print', 'Segoe UI', sans-serif;
+  padding: 10%;
+}
+
 .bg-cover-about
 {
   background-position: center;
@@ -254,18 +277,6 @@ margin-bottom: 50px;
   text-decoration: none;
   border-top: 2px solid #ffffff;
   border-bottom: 2px solid #ffffff;
-}
-
-.price-tag
-{
-  background-color: #0089BA;
-  color: #ffffff,
-}
-
-.price-details
-{
-  background-color: #ffffff;
-  color: #0089BA
 }
 
 .overflow

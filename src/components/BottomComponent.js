@@ -6,7 +6,7 @@ class Bottom extends Component {
     render() {
       return(
         
-        <footer class="site-footer">
+        <footer class="site-footer m-0">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
