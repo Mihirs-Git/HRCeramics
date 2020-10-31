@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import {
-    Jumbotron
-  } from 'reactstrap';
-
-  import GalleryImg from './GalleryComponent';
-  import { Loading } from './LoadingComponent';
+import { Jumbotron } from 'reactstrap';
+import GalleryImg from './GalleryComponent';
+import { Loading } from './LoadingComponent';
 
 const JumbotronUse =(props)=>{
     return(

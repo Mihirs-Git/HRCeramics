@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardGroup, CardImg, CardText, CardTitle, Navbar,Nav, NavItem, NavLink, Button, CardImgOverlay, Jumbotron} from 'reactstrap';
+import { Loading } from './LoadingComponent';
 
 class Home1 extends Component{
 
@@ -10,7 +11,6 @@ class Home1 extends Component{
         this.state = {
             tileName: 'Elevation',
             tileDescription: 'Elevation tiles design are one of the most natural and modern tiles that proves to be a great option and a unique choice. Elevation tiles design is created with the sense of grandeur and they really offer zenith designs. Elevation tiles also known as rustic tiles are substitute to natural stone.',
-            tileImg: 'assets/sample.jpg',
 
             isActive: {
                 elevation: true,
@@ -19,7 +19,11 @@ class Home1 extends Component{
                 wall: false,
                 parking: false,
                 sanitary: false,
-                src: '/assets/cardview/elevation.jpg'
+                decorative: false,
+                granite: false,
+                stair: false,
+                double_charge: false,
+                src: 'https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fcatagory%2Frsz_elevation.jpg?alt=media&token=70cb991f-d933-43c4-acfe-d3c72d9fce5d'
             }
 
         }
@@ -38,7 +42,10 @@ class Home1 extends Component{
                         wall: false,
                         parking: false,
                         sanitary: false,
-                        src: '/assets/cardview/elevation.jpg'
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false,
                     }
                 });
                 break;
@@ -51,7 +58,10 @@ class Home1 extends Component{
                         wall: false,
                         parking: false,
                         sanitary: false,
-                        src: '/assets/cardview/wooden.jpg'
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false,
                     }
                 });
                 break;
@@ -64,7 +74,10 @@ class Home1 extends Component{
                         wall: false,
                         parking: false,
                         sanitary: false,
-                        src: '/assets/cardview/kitchen.jpg'
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false,
                     }
                 });
                 break;
@@ -77,7 +90,10 @@ class Home1 extends Component{
                         wall: true,
                         parking: false,
                         sanitary: false,
-                        src: '/assets/cardview/floor.jpg'
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false,
                     }
                 });
                 break;
@@ -91,7 +107,10 @@ class Home1 extends Component{
                         parking: true,
                         sanitary: false,
                         decorative: false,
-                        src: '/assets/cardview/parking.jpg'
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false,
                     }
                 });
                 break;
@@ -104,7 +123,10 @@ class Home1 extends Component{
                         wall: false,
                         parking: false,
                         sanitary: true,
-                        src: '/assets/cardview/sanitary.jpg'
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false,
                     }
                 });
                 break;
@@ -117,10 +139,62 @@ class Home1 extends Component{
                         wall: false,
                         parking: false,
                         sanitary: false,
+                        decorative: true,
+                        granite: false,
+                        stair: false,
+                        double_charge: false
+                    }
+                });
+                break;
+
+                case "Granite": this.setState({
+                    isActive: {
+                        elevation: false,
+                        wooden: false,
+                        kitchen: false,
+                        wall: false,
+                        parking: false,
+                        sanitary: false,
+                        decorative: false,
+                        granite: true,
+                        stair: false,
+                        double_charge: false
+                    }
+                });
+                break;
+
+                case "Stair": this.setState({
+                    isActive: {
+                        elevation: false,
+                        wooden: false,
+                        kitchen: false,
+                        wall: false,
+                        parking: false,
+                        sanitary: false,
+                        decorative: false,
+                        granite: false,
+                        stair: true,
+                        double_charge: false
                     }
                 });
                 break;
                 
+                case "Double Charge": this.setState({
+                    isActive: {
+                        elevation: false,
+                        wooden: false,
+                        kitchen: false,
+                        wall: false,
+                        parking: false,
+                        sanitary: false,
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: true
+                    }
+                });
+                break;
+
                 default: this.setState({
                     isActive: {
                         elevation: true,
@@ -129,6 +203,10 @@ class Home1 extends Component{
                         wall: false,
                         parking: false,
                         sanitary: false,
+                        decorative: false,
+                        granite: false,
+                        stair: false,
+                        double_charge: false
                     }
                 });
                 break;
@@ -138,23 +216,45 @@ class Home1 extends Component{
         this.setState({
             tileName: selectedCategory.name,
             tileDescription: selectedCategory.description,
+            isActive: {src: selectedCategory.image }
         });
     }
 
     render(){
         const displayFeatured = this.props.featured.map((category) => {
-            return(
-                <div className="col-12 col-md-6">
-                    <div className="overflow">
-                        <Card className="feature-card mt-2 mt-md-0">
-                            <CardImg width="100%" src= {category.image} alt="Image" className="card-img-top"></CardImg>
-                            <CardImgOverlay className="d-flex justify-content-center align-items-center">
-                                <Link to={`/product1/${category.id}`} className="feature-title"><strong>{category.name}</strong></Link>
-                            </CardImgOverlay>    
-                        </Card>
+
+            if(this.props.categoryLoading)
+            {
+                return(
+                    <Loading></Loading>
+                );
+            }
+
+            else if(this.props.categoryErrMess)
+            {
+                return(
+                    <div className="text-center">
+                        {this.props.categoryErrMess}
                     </div>
-                </div>
-            );
+                );
+            }
+
+            else
+            {
+                return(
+                    <div className="col-12 col-md-6">
+                        <div className="overflow">
+                            <Card className="feature-card mt-2 mt-md-0">
+                                <CardImg width="100%" src= {category.image} alt="Image" className="card-img-top"></CardImg>
+                                <CardImgOverlay className="d-flex justify-content-center align-items-center">
+                                    <Link to={`/product1/${category.id}`} className="feature-title"><strong>{category.name}</strong></Link>
+                                </CardImgOverlay>    
+                            </Card>
+                        </div>
+                    </div>
+                );
+            }
+            
         });
 
         return(
@@ -191,6 +291,18 @@ class Home1 extends Component{
                                 </NavItem>
                                 <NavItem>
                                     <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Sanitary")} } >Sanitary Tiles</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Double Charge")} } >Double Charge</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Decorative")} } >Decor - Piece</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Stair Tiles")} } >Stairway Tiles</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Granite")} } >Granite</NavLink>
                                 </NavItem>
                             </Nav>
                         </Navbar>

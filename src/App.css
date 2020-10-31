@@ -31,10 +31,19 @@
   box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
   z-index: 100;
 }
+
 .card-text{
   color:rgb(95, 93, 93);
   font-size: 10px;
 }
+
+.card-title
+{
+  color: black;
+  font-size: x-large;
+}
+
+
 .card-primary:hover .card-title{
   color: black;
   box-shadow: black;
@@ -59,7 +68,7 @@
 .jumbotron1 {
   padding:70px 30px 600px 30px;
   margin-bottom: 60px;
-  background-image: url('/assets/catagory/catagory1.jpg');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fcatagory%2Fcatagory1.jpg?alt=media&token=beb0e4e3-72bc-493c-a308-22e787a453e8');
   background-attachment:fixed;
   -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
@@ -85,7 +94,7 @@
 .sizejumbotron1 {
   padding:70px 30px 600px 30px;
   margin-bottom: 60px;
-  background-image: url('/assets/sizes/catagory2.jpg');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fsizes%2Fcatagory2.jpg?alt=media&token=77a0c713-3470-4f54-be50-75fe0fc2704c');
   background-attachment:fixed;
   -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
@@ -95,7 +104,7 @@
 .sizejumbotron2{
   text-align: center;
   color: aliceblue;
-  background-image: url('/assets/backgroundforloading.jpg');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fbackgroundforloading.jpg?alt=media&token=0ba0b41d-645a-482b-89b0-9299c4e66b54');
   /* background-color: #1f1d1d; */
   /* background-color:rgb(148, 145, 145); */
   margin-bottom: 0;
@@ -158,7 +167,7 @@ margin-bottom: 50px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/backgroundforloading.jpg'); 
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fbackgroundforloading.jpg?alt=media&token=0ba0b41d-645a-482b-89b0-9299c4e66b54'); 
   background-attachment:fixed;
   padding:70px 30px 600px 30px; 
   margin-bottom: 60px;
@@ -193,17 +202,17 @@ margin-bottom: 50px;
 }
 
 .bg-cover {
-  background-attachment: static;
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("/assets/sample.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fsample.jpg?alt=media&token=13c70b62-3e2f-44bf-bf16-5941bce0dfba");
 }
 
 .bg-cover-category
 {
   background-position: right;
-  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.75)), url("/assets/shop-category-2.jpg");
+  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.75)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fshop-category-2.jpg?alt=media&token=2e461615-c55e-448a-a59f-95c8378884d6");
   max-width: 100%;
   height: auto;
   font-family: 'Segoe Print', 'Segoe UI', sans-serif;
@@ -212,8 +221,8 @@ margin-bottom: 50px;
 
 .bg-cover-gallery
 {
-  background-position: right;
-  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.75)), url("/assets/shop-gallery.jpg");
+  background-position: center;
+  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.75)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fshop-gallery.jpg?alt=media&token=0d54ccee-ef28-4180-addf-e6faeeb941fe");
   max-width: 100%;
   height: auto;
   font-family: 'Segoe Print', 'Segoe UI', sans-serif;
@@ -224,7 +233,7 @@ margin-bottom: 50px;
 {
   background-position: center;
   background-size: cover;
-  background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1)), url("/assets/images/shop-about.jpg");
+  background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fshop-about.jpg?alt=media&token=87fd9ca1-dc57-4a8d-bfa6-05377be6e2da");
   max-width: 100%;
   height: auto;
 }
@@ -233,7 +242,7 @@ margin-bottom: 50px;
 {
   background-position: bottom;
   background-size: cover;
-  background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1)), url("/assets/images/shop-about-message.jpg");
+  background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fshop-about-message.jpg?alt=media&token=efbc06b9-84fa-4e9d-8470-6fa6ccfb60d5");
   max-width: 100%;
   height: auto;
 }
@@ -242,7 +251,7 @@ margin-bottom: 50px;
 {
   background-position: right;
   background-size: cover;
-  background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1)), url("/assets/images/shop-about-developers.jpg");
+  background-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fshop-about-developers.jpg?alt=media&token=da13fd3f-bb63-4d30-ae50-2864f732fb2c");
   max-width: 100%;
   height: auto;
 }
@@ -289,31 +298,17 @@ margin-bottom: 50px;
   color: lightgreen;
 }
 
-.bingmap
-{
-  height: 500px;
-} 
-
 .developer-contact
 {
   background-attachment: static;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("/assets/images/contact-developer.jpg");
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.75)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fcontact-developer.jpg?alt=media&token=0b683e6d-bb22-4102-b32d-35d59f05ebb4");
   /* background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("/assets/sample.jpg"); */
 
   color: #ffffff;
 } 
-
- .map
-{
-  width: 5000px;
-}
-.map-image:hover
-{
-  transform: scale(1.25);
-}
 
 /*Mihir*/
 
@@ -728,10 +723,11 @@ address{
 }
 .jumbotron3 {
   
+  background-attachment: static;
   padding:50px 50px 300px 50px;
   margin-bottom: 60px;
   
-  background-image: url('/assets/map.jpg');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fmap.jpg?alt=media&token=2e5cd023-19c8-4d75-917e-d0d5e16aac34');
   /* background-attachment:fixed; */
   -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
@@ -744,6 +740,7 @@ address{
 }
 
 /*CAROUSEL BOOTSTRAP*/
+
 /* .carousel {
   background:#512DA8;
 }

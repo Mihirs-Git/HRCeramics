@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
-import { baseUrl } from '../shared/baseUrl';
+
+import { firestore, firebasestore } from '../firebase/firebase';
 
 
 
@@ -7,24 +8,24 @@ export const fetchShop = () => (dispatch) => {
 
     dispatch(catagoryLoading(true));
 
-    return fetch(baseUrl + 'SHOPDATA')
-    .then(response => {
-        if(response.ok){
-            return response;
-        }
-        else
-        {
-            var error  = new Error("Error " + response.status + ":" + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    }, error => {
-        var errmess = new Error(error.message);
-        throw errmess;
+    return firestore.collection('SHOPDATA').get()
+    .then(snapshot => {
+
+        let shopData = [];
+        snapshot.forEach(doc => {
+
+            const data = doc.data();
+            const _id = doc.id
+            shopData.push({_id, ...data});
+            
+        });
+
+        return shopData;
+
     })
-    .then(response => response.json())
     .then(SHOPDATA => dispatch(addCatagory(SHOPDATA)))
     .catch(error => dispatch(catagoryFailed(error.message)));
+    
 }
 
 export const catagoryLoading = () => ({

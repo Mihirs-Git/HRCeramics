@@ -11,7 +11,9 @@ class Home extends Component{
             <React.Fragment>
                 <Carousel/>
                 <Home1 featured = { this.props.categories.filter((category) => category.featured) } 
-                        categories={this.props.categories} ></Home1>
+                        categories={this.props.categories}
+                        categoryLoading={this.props.catagoryLoading}
+                        categoryErrMess={this.props.catagoryErrMess}></Home1>
                 <Home2 categories={this.props.categories}></Home2>
             </React.Fragment>
 

@@ -22,7 +22,7 @@ class About extends Component
                             </div>
                             <div className="row">
                                 <div className="col-12 col-md-6 order-md-last">
-                                    <img src="assets/images/text-title.png" alt="Shop Name" className="text-logo"></img>
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Ftext-title.png?alt=media&token=9e07b6df-8631-45ea-952a-f8e3f4a91679" alt="Shop Name" className="text-logo"></img>
                                 </div> 
                                 <div className="col-12 col-md-6 align-self-center justifiedText order-md-first pt-3">
                                     <p>
@@ -117,7 +117,7 @@ class About extends Component
                                     <CardDeck>
                                         <Card className="text-center align-self-center">
                                                 <CardText className="bg-white mt-4">
-                                                    <img className="about-developer-img" src="assets/images/safal_photo.jpg" alt="Safal Patel"></img>
+                                                    <img className="about-developer-img" src="https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fsafal_photo.jpg?alt=media&token=db9e25dd-f566-4e14-a531-b8df2ce2a5e5" alt="Safal Patel"></img>
                                                 </CardText>
                                                 <CardBody>
                                                     <CardTitle className="profile-text">
@@ -146,7 +146,7 @@ class About extends Component
                                             </Card>
                                         <Card className="text-center align-self-center">
                                             <CardText className="bg-white mt-4">
-                                                <img className="about-developer-img" src="assets/images/mihir_photo.jpg" alt="Mihir Parmar"></img>
+                                                <img className="about-developer-img" src="https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fmihir_photo.jpg?alt=media&token=e1c0c21d-2d12-4338-8734-d3a1ad95e986" alt="Mihir Parmar"></img>
                                             </CardText>
                                             <CardBody>
                                                 <CardTitle className="profile-text">
@@ -175,7 +175,7 @@ class About extends Component
                                         </Card>
                                         <Card className="text-center align-self-center">
                                             <CardText className="bg-white mt-4">
-                                            <img className="about-developer-img" src="assets/images/vrushang_photo.jpg" alt="Vrushang Patel"></img>
+                                            <img className="about-developer-img" src="https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2Fvrushang_photo.jpg?alt=media&token=0235cbeb-db9f-4fd8-b045-822382ce1d5f" alt="Vrushang Patel"></img>
                                             </CardText>
                                             <CardBody>
                                                 <CardTitle className="profile-text">

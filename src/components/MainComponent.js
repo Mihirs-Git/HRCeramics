@@ -101,8 +101,9 @@ render() {
     <div>
               <NavBar/>
         <Switch>
-        <Route path="/home" component={() => 
-            <Home categories={this.props.catagory1.catagory1}/> } />
+              <Route path="/home" component={() => <Home categories={this.props.catagory1.catagory1} 
+                                                        catagoryLoading={this.props.catagory1.isLoading}
+                                                        catagoryErrMess={this.props.catagory1.errMess}/> } />
               <Route exact path='/product1' component={() => 
               <Product1 catagory1={this.props.catagory1.catagory1}
               catagoryLoading={this.props.catagory1.isLoading}
@@ -118,7 +119,7 @@ render() {
               
               <Route exact path='/shop' component={ProductWithIdsg} />
               <Route exact path="/contact" component={() => <Contact ratings={this.props.ratings.ratings}
-                                                          ratingLoading={this.props.fetchRatings.isLoading}
+                                                                            ratingLoading={this.props.fetchRatings.isLoading}
                                                                             postRatings={this.props.postRatings}
                                                                             resetFeedbackForm={this.props.resetFeedbackForm}
                                                                             resetRatingForm={this.props.resetRatingForm} />} ></Route>

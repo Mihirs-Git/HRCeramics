@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes';
-import { baseUrl } from '../shared/baseUrl';
+import { firestore } from '../firebase/firebase';
+
 
 //postRatings
 export const postRatings = (rating) => (dispatch)=>{
@@ -9,76 +10,47 @@ export const postRatings = (rating) => (dispatch)=>{
     var words = ['one', 'two', 'three', 'four', 'five'];
     var rate = words[userRating-1];
 
-    return fetch(baseUrl + 'rating')
-    .then(response => {
-        if(response.ok){
-            return response;
-        }
-        else
-        {
-            var error  = new Error("Error " + response.status + ":" + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    }, error => {
-        var errmess = new Error(error.message);
-        throw errmess;
+
+    return firestore.collection('rating').doc("ratings").get()
+    .then(doc => {
+        let ratings = doc.data();
+        ratings[rate] += 1
+        return ratings;
     })
-    .then(response => response.json())
-    .then(newRatings => {
-        newRatings[rate] += 1;
-        console.log(newRatings);
-        fetch(baseUrl + 'rating',{
-            method: 'POST',
-            body: JSON.stringify(newRatings),
-            headers: {
-                "Content-Type": "application/json"
-            },
-            credentials: "same-origin"
-        })
-        .then(response => {
-            if(response.ok){
-                return response;
-            }
-            else
-            {
-                var error  = new Error("Error " + response.status + ":" + response.statusText);
-                error.response = response;
-                throw error;
-            }
-        }, error => {
-            var errmess = new Error(error.message);
-            throw errmess;
-        })
-        .then(response => response.json())
-        .then(response => dispatch(addRatings(response)))
-        .catch(error => dispatch(ratingsFailed(error.message)));
-        })
-    .catch(error => dispatch(ratingsFailed(error.message))); 
+    .then(ratings => {
         
+        firestore.collection('rating').doc("ratings").update({
+
+            "one": ratings.one,
+            "two": ratings.two,
+            "three": ratings.three,
+            "four": ratings.four,
+            "five": ratings.five
+    
+        })
+
+        return firestore.collection('rating').doc("ratings").get()
+        .then(doc => {
+            let ratings = doc.data();
+            return ratings;
+        })
+        .then(ratings => dispatch(showRatings(ratings)))
+        .catch(error => dispatch(ratingsFailed(error.message)));
+
+    })
+    .catch(error => dispatch(ratingsFailed(error.message)));
+    
 }
 
 
 //fetchRatings
 export const fetchRatings = () => (dispatch) => {
 
-
-    return fetch(baseUrl + 'rating')
-    .then(response => {
-        if(response.ok){
-            return response;
-        }
-        else
-        {
-            var error  = new Error("Error " + response.status + ":" + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    }, error => {
-        var errmess = new Error(error.message);
-        throw errmess;
+    return firestore.collection('rating').doc("ratings").get()
+    .then(doc => {
+        let ratings = doc.data();
+        return ratings;
     })
-    .then(response => response.json())
     .then(ratings => dispatch(showRatings(ratings)))
     .catch(error => dispatch(ratingsFailed(error.message)));
 
@@ -89,26 +61,26 @@ export const fetchCatagory1 = () => (dispatch) => {
 
     dispatch(catagoryLoading(true));
 
-    
-    return fetch(baseUrl + 'CATAGORY1')
-    .then(response => {
-        if(response.ok){
-            return response;
-        }
-        else
-        {
-            var error  = new Error("Error " + response.status + ":" + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    }, error => {
-        var errmess = new Error(error.message);
-        throw errmess;
+    return firestore.collection('CATAGORY1').get()
+    .then(snapshot => {
+
+        let catagory1 = [];
+        snapshot.forEach(doc => {
+
+            const data = doc.data();
+            console.log(data);
+            const _id = doc.id
+            console.log(_id);
+            catagory1.push({_id, ...data});
+            
+        });
+
+        return catagory1;
+
     })
-    .then(response => response.json())
     .then(CATAGORY1 => dispatch(addCatagory(CATAGORY1)))
     .catch(error => dispatch(catagoryFailed(error.message)));
-
+    
 }
 
 export const catagoryLoading = () => ({

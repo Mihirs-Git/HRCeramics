@@ -7,39 +7,46 @@ class Carousel extends Component {
        
         const items = [
             {
-                src: "assets/images/1.jpg",
+                src: "https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2F1.jpg?alt=media&token=6528fd71-963f-4e63-adf3-5a769c9b301a",
                 altText: "Image 1",
                 //caption: "Work Samples",
                 //header: "",
                 key: '1',
             },
             {
-                src: "assets/images/2.jpg",
+                src: "https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2F2.jpg?alt=media&token=34749d8b-63d8-4ca5-855e-c173ba588ba8",
                 altText: "Image 2",
                 //caption: "Work Samples",
                 //header: "",
                 key: '2',
             },
             {
-                src: "assets/images/3.png",
+                src: "https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2F3.png?alt=media&token=a292a586-fca1-477f-9545-d7c986dbd74f",
                 altText: "Image 3",
                 //caption: "Work Samples",
                 //header: "",
                 key: '3',
             },
             {
-                src: "assets/images/4.jpg",
-                altText: "Image 3",
+                src: "https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2F4.jpg?alt=media&token=7ab0e59c-a5ba-4f33-8a52-6418543476e8",
+                altText: "Image 4",
                 //caption: "Work Samples",
                 //header: "",
                 key: '4',
+            },
+            {
+                src: "https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fimages%2F5.jpg?alt=media&token=291f5c08-70cc-48dd-a590-f55a8665948d",
+                altText: "Image 5",
+                //caption: "Work Samples",
+                //header: "",
+                key: '5',
             }
         ];
       return(
 
-        <Jumbotron fluid>
-                    <UncontrolledCarousel items={items}></UncontrolledCarousel>
-                </Jumbotron>
+        <Jumbotron fluid className="p-0">
+            <UncontrolledCarousel items={items}></UncontrolledCarousel>
+        </Jumbotron>
                 
       
       );

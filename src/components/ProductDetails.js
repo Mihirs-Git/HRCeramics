@@ -7,7 +7,6 @@ const ProductDetails =(props)=>{
      
 
     const [buttonid, setCurrentImage] = useState(props.product.gallery)
-    console.log(props.product.gallery)
     const handleFilterCategory = (name) => {
         const new_array = props.product.gallery.filter(gallery => gallery.category && gallery.category.includes(name));
         setCurrentImage(new_array)
@@ -17,10 +16,10 @@ const ProductDetails =(props)=>{
       <div> 
             
             <Jumbotron fluid className='sizejumbotron2 text-dark'>
-            <Container fluid>
-                <h1 className="display-5 mt-5">{props.product.name}</h1>
-                <p className="lead ml-5 mr-5">{props.product.description}</p>
-            </Container>
+                <Container fluid>
+                    <h1 className="display-5 mt-5">{props.product.name}</h1>
+                    <p className="lead ml-5 mr-5">{props.product.description}</p>
+                </Container>
             </Jumbotron> 
                 <div className="row btngroup">
                     <div className="col-md-4"></div>

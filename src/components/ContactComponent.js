@@ -157,157 +157,151 @@ class Contact extends Component
                     <div className="row">
                     
                         <div className="col-12 col-md-6 pl-5">
-                            <Slide left>
-                                <Form model="feedback" onSubmit={(values) => this.submitFeedback(values)}>
-                                    <div className="row form-group">                    
-                                        <h4>Your Feedback Matters</h4>    
+                            <Form model="feedback" onSubmit={(values) => this.submitFeedback(values)}>
+                                <div className="row form-group">                    
+                                    <h4>Your Feedback Matters</h4>    
+                                </div>
+                                <div className="row form-group">
+                                    <Label htmlFor="fullname" md={2} className="pl-1">Name<small>*</small></Label>
+                                    <Errors md={10} className="text-danger align-self-center pl-0" model=".fullname" show="touched"
+                                            messages={{
+                                                required: " *Required ",
+                                                minLength: " *Minimum 7 characters",
+                                                maxLength: " *Maximum 30 characters"
+                                            }}>
+                                    </Errors>
+                                    <Control.text model=".fullname" name="fullname" id="fullname" 
+                                        className="form-control"
+                                        placeholder="Enter your fullname please..."
+                                        validators={{ required, minLength: minLength(7), maxLength: maxLength(30)}}></Control.text>
+                                </div>
+                                <div className="row form-group">
+                                    <Label htmlFor="email" md={2} className="pl-1">Email<small>*</small></Label>
+                                    <Errors md={10} className="text-danger align-self-center" model=".email" show="touched"
+                                            messages={{
+                                                required: " *Required ",
+                                                validEmail: " *Invalid Email-Id "
+                                            }}>
+                                    </Errors>
+                                    <Control.text model=".email" name="email" id="email" 
+                                        className="form-control"
+                                        placeholder="Enter your email please..."
+                                        validators={{required, validEmail}}></Control.text>
+                                </div>
+                                <div className="row form-group">
+                                    <Label htmlFor="phone" md={2} className="pl-1">Mobile</Label>
+                                    <Errors  md={10} className="text-danger align-self-center" model=".phone" show="touched"
+                                            messages={{
+                                                isNumber: " *Not a number",
+                                                minLength: " *Minimum 10 numbers",
+                                                maxLength: " *Maximum 10 numbers"
+                                            }}>
+                                    </Errors>
+                                    <Control.text model=".phone" name="phone" id="phone" 
+                                        className="form-control"
+                                        placeholder="Enter your phone number please..."
+                                        validators={{isNumber, minLength: minLength(10), maxLength: maxLength(10)}}></Control.text>
+                                </div>
+                                <div className="row form-group">
+                                    <Label htmlFor="feedback" md={2} className="pl-1">Feedback<small>*</small></Label>
+                                    <Errors  md={10} className="text-danger align-self-center" model=".feedback" show="touched"
+                                            messages={{
+                                                required: " *Required ",
+                                                minLength: " *Minimum 10 characters",
+                                                maxLength: " *Maximum 200 characters"
+                                            }}>
+                                    </Errors>
+                                    <Control.textarea model=".feedback" name="feedback" id="feedback" 
+                                        className="form-control" rows="5"
+                                        placeholder="Enter your feedback please..."
+                                        validators={{required, minLength: minLength(10), maxLength: maxLength(200)}}></Control.textarea>
+                                </div>
+                                <div className="row form-group">
+                                    
+                                    <div className="col-12 col-md-4 p-0">
+                                        <Button type="submit" color="primary" md={2}>Send Feedback</Button>
                                     </div>
-                                    <div className="row form-group">
-                                        <Label htmlFor="fullname" md={2} className="pl-1">Name<small>*</small></Label>
-                                        <Errors md={10} className="text-danger align-self-center pl-0" model=".fullname" show="touched"
-                                                messages={{
-                                                    required: " *Required ",
-                                                    minLength: " *Minimum 7 characters",
-                                                    maxLength: " *Maximum 30 characters"
-                                                }}>
-                                        </Errors>
-                                        <Control.text model=".fullname" name="fullname" id="fullname" 
-                                            className="form-control"
-                                            placeholder="Enter your fullname please..."
-                                            validators={{ required, minLength: minLength(7), maxLength: maxLength(30)}}></Control.text>
+                                    <div className="col-12 col-md-8 p-0 mt-2 mt-md-0">
+                                        <Toast isOpen={this.state.showFeedbackToast} className="ml-md-5">
+                                            <ToastBody className="bg-primary text-white">
+                                                Feedback submitted successfully
+                                                <span className="fa fa-times-circle float-right mt-1" onClick={() => this.closeToast('feedback')}></span>
+                                            </ToastBody>
+                                        </Toast>    
                                     </div>
-                                    <div className="row form-group">
-                                        <Label htmlFor="email" md={2} className="pl-1">Email<small>*</small></Label>
-                                        <Errors md={10} className="text-danger align-self-center" model=".email" show="touched"
-                                                messages={{
-                                                    required: " *Required ",
-                                                    validEmail: " *Invalid Email-Id "
-                                                }}>
-                                        </Errors>
-                                        <Control.text model=".email" name="email" id="email" 
-                                            className="form-control"
-                                            placeholder="Enter your email please..."
-                                            validators={{required, validEmail}}></Control.text>
-                                    </div>
-                                    <div className="row form-group">
-                                        <Label htmlFor="phone" md={2} className="pl-1">Mobile</Label>
-                                        <Errors  md={10} className="text-danger align-self-center" model=".phone" show="touched"
-                                                messages={{
-                                                    isNumber: " *Not a number",
-                                                    minLength: " *Minimum 10 numbers",
-                                                    maxLength: " *Maximum 10 numbers"
-                                                }}>
-                                        </Errors>
-                                        <Control.text model=".phone" name="phone" id="phone" 
-                                            className="form-control"
-                                            placeholder="Enter your phone number please..."
-                                            validators={{isNumber, minLength: minLength(10), maxLength: maxLength(10)}}></Control.text>
-                                    </div>
-                                    <div className="row form-group">
-                                        <Label htmlFor="feedback" md={2} className="pl-1">Feedback<small>*</small></Label>
-                                        <Errors  md={10} className="text-danger align-self-center" model=".feedback" show="touched"
-                                                messages={{
-                                                    required: " *Required ",
-                                                    minLength: " *Minimum 10 characters",
-                                                    maxLength: " *Maximum 200 characters"
-                                                }}>
-                                        </Errors>
-                                        <Control.textarea model=".feedback" name="feedback" id="feedback" 
-                                            className="form-control" rows="5"
-                                            placeholder="Enter your feedback please..."
-                                            validators={{required, minLength: minLength(10), maxLength: maxLength(200)}}></Control.textarea>
-                                    </div>
-                                    <div className="row form-group">
-                                        
-                                        <div className="col-12 col-md-4 p-0">
-                                            <Button type="submit" color="primary" md={2}>Send Feedback</Button>
-                                        </div>
-                                        <div className="col-12 col-md-8 p-0 mt-2 mt-md-0">
-                                            <Toast isOpen={this.state.showFeedbackToast} className="ml-md-5">
-                                                <ToastBody className="bg-primary text-white">
-                                                    Feedback submitted successfully
-                                                    <span className="fa fa-times-circle float-right mt-1" onClick={() => this.closeToast('feedback')}></span>
-                                                </ToastBody>
-                                            </Toast>    
-                                        </div>
-                                    </div>
-                                </Form>
-                                </Slide>
+                                </div>
+                            </Form>
                         </div>
                         
                         
                         <div className="col-12 col-md-6 pl-5">
-                            <Slide right>
-                                <Form model="rating"  onSubmit={(values) => this.submitRating(values)}>
-                                    <div className="row form-group">                    
-                                        <h4>Rate Us</h4>    
-                                    </div>
-                                    <div className="row form-group">
-                                        <Rating start={0} stop={5} step={1}
-                                                emptySymbol = "fa fa-star-o fa-2x"
-                                                fullSymbol = "fa fa-star fa-2x"
-                                                fractions={1}
-                                                initialRating = {this.state.rating}
-                                                onClick = {this.changeRating}
+                            <Form model="rating"  onSubmit={(values) => this.submitRating(values)}>
+                                <div className="row form-group">                    
+                                    <h4>Rate Us</h4>    
+                                </div>
+                                <div className="row form-group">
+                                    <Rating start={0} stop={5} step={1}
+                                            emptySymbol = "fa fa-star-o fa-2x"
+                                            fullSymbol = "fa fa-star fa-2x"
+                                            fractions={1}
+                                            initialRating = {this.state.rating}
+                                            onClick = {this.changeRating}
 
-                                        ></Rating>
+                                    ></Rating>
+                                </div>
+                                <div className="row form-group">
+                                    <Label htmlFor="email" md={2} className="pl-1">Email<small>*</small></Label>
+                                    <Errors md={10} className="text-danger align-self-center" model=".email" show="touched"
+                                            messages={{
+                                                required: " *Required ",
+                                                validEmail: " *Invalid Email-Id "
+                                            }}>
+                                    </Errors>
+                                    <Control.text model=".email" name="email" id="email" 
+                                        className="form-control"
+                                        placeholder="Enter your email please..."
+                                        validators={{required, validEmail}}></Control.text>
+                                </div>
+                                <div className="row form-group">
+                                    <Label htmlFor="comments" md={3} className="pl-1"><small>Optional Comments</small></Label>
+                                    <Errors md={9} className="text-danger align-self-center" model=".comments" show="touched"
+                                            messages={{
+                                                minLength: " *Minimum 0 characters",
+                                                maxLength: " *Maximum 200 characters"
+                                            }}>
+                                    </Errors>
+                                    <Control.textarea model=".comments" name="comments" id="comments" 
+                                        className="form-control" rows="3"
+                                        placeholder="Why did you rate this much?"
+                                        validators={{minLength: minLength(0), maxLength: maxLength(200)}}></Control.textarea>
+                                </div>
+                                <div className="row form-group">
+                                    <div className="col-12 col-md-4 p-0">
+                                        <Button type="submit" color="success">Submit Ratings</Button>
                                     </div>
-                                    <div className="row form-group">
-                                        <Label htmlFor="email" md={2} className="pl-1">Email<small>*</small></Label>
-                                        <Errors md={10} className="text-danger align-self-center" model=".email" show="touched"
-                                                messages={{
-                                                    required: " *Required ",
-                                                    validEmail: " *Invalid Email-Id "
-                                                }}>
-                                        </Errors>
-                                        <Control.text model=".email" name="email" id="email" 
-                                            className="form-control"
-                                            placeholder="Enter your email please..."
-                                            validators={{required, validEmail}}></Control.text>
+                                    <div className="col-12 col-md-8 p-0 mt-2 mt-md-0">
+                                        <Toast isOpen={this.state.showRatingToast} className="ml-md-5">
+                                            <ToastBody className="bg-success text-white">
+                                                Ratings submitted successfully
+                                                <span className="fa fa-times-circle float-right mt-1" onClick={() => this.closeToast('rating')}></span>
+                                            </ToastBody>
+                                        </Toast>    
                                     </div>
-                                    <div className="row form-group">
-                                        <Label htmlFor="comments" md={3} className="pl-1"><small>Optional Comments</small></Label>
-                                        <Errors md={9} className="text-danger align-self-center" model=".comments" show="touched"
-                                                messages={{
-                                                    minLength: " *Minimum 0 characters",
-                                                    maxLength: " *Maximum 200 characters"
-                                                }}>
-                                        </Errors>
-                                        <Control.textarea model=".comments" name="comments" id="comments" 
-                                            className="form-control" rows="3"
-                                            placeholder="Why did you rate this much?"
-                                            validators={{minLength: minLength(0), maxLength: maxLength(200)}}></Control.textarea>
-                                    </div>
-                                    <div className="row form-group">
-                                        <div className="col-12 col-md-4 p-0">
-                                            <Button type="submit" color="success">Submit Ratings</Button>
-                                        </div>
-                                        <div className="col-12 col-md-8 p-0 mt-2 mt-md-0">
-                                            <Toast isOpen={this.state.showRatingToast} className="ml-md-5">
-                                                <ToastBody className="bg-success text-white">
-                                                    Ratings submitted successfully
-                                                    <span className="fa fa-times-circle float-right mt-1" onClick={() => this.closeToast('rating')}></span>
-                                                </ToastBody>
-                                            </Toast>    
-                                        </div>
-                                    </div>
+                                </div>
+                            
+                                <div className="row mt-4">
+                                    <h6>People's Ratings</h6>
+                                </div>
 
-                                    <div className="row mt-4">
-                                        <h6>People's Ratings</h6>
-                                    </div>
+                                <div className="row form-group">
+                                    {ShowRatings}
+                                </div>
 
-                                    <div className="row form-group">
-                                        {ShowRatings}
-                                    </div>
-
-                                </Form>  
-                                </Slide>
+                            </Form>  
                         </div>
                     </div>
                     
-                    
-
-                    <div className="row p-2 m-5 text-center">
+                    <div className="row p-2 mt-5 mb-0 m-sm-5 text-center">
                         <div className="col-12 col-lg-6 p-1">
                             <h3>
                                 <Badge color="danger" href="mailto: hrceramics@gmail.com?subject=Query: HR Ceramics&body=Write your query here..." className="p-3" pill>
@@ -327,8 +321,8 @@ class Contact extends Component
                             </h3>
                         </div>
                     </div>
-                    <div className="row p-2 m-5 text-center">
-                        <div className="col-12 col-lg-12 p-1">
+                    <div className="row p-sm-2 mt-0 mb-5 m-sm-5 text-center">
+                        <div className="col-12 col-lg-12 p-sm-1">
                             <h3>
                                 <Badge color="primary" className="p-3" pill>
                                     <span className="fa fa-phone">
@@ -339,7 +333,7 @@ class Contact extends Component
                         </div>
                     </div>
 
-                    <div className="row pt-5">
+                    {/* <div className="row pt-5">
                         <div className="col-12 text-center pb-3">
                             <a className="btn btn-outline-success btn-md pb-2" href="https://www.google.co.in/maps/dir//21.71525,73.0206944/@21.7152073,73.0206138,21z?hl=en-GB">
 
@@ -347,11 +341,13 @@ class Contact extends Component
 
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                     <Fade>
-                    <Jumbotron className=" m-0 jumbotron3">
-                    
-                    </Jumbotron>
+                        <Jumbotron className="text-center m-0 jumbotron3">
+                            <a className="btn btn-outline-dark btn-md mt-5 mb-5" href="https://www.google.co.in/maps/dir//21.71525,73.0206944/@21.7152073,73.0206138,21z?hl=en-GB">
+                                View in Google Maps
+                            </a>
+                        </Jumbotron>
                     </Fade>
                    
                 </div>
@@ -379,17 +375,17 @@ class Contact extends Component
                         <h4>
                             Contact the developers of this website
                         </h4>
-                        <a className="btn btn-info btn-lg m-3 m-md-5" href="mailto: parmarmihir49@gmail.com?subject=Develop a Website&body=Write about your website requirement or any queries...">
+                        <a className="btn btn-outline-light btn-lg m-3 m-md-5" href="mailto: parmarmihir49@gmail.com?subject=Develop a Website&body=Write about your website requirement or any queries...">
                             <span className="fa fa-code">
                                 {' '}Mihir Parmar
                             </span>
                         </a>
-                        <a className="btn btn-info btn-lg m-3 m-md-5" href="mailto: patelvrushang1@gmail.com?subject=Develop a Website&body=Write about your website requirement or any queries...">
+                        <a className="btn btn-outline-light btn-lg m-3 m-md-5" href="mailto: patelvrushang1@gmail.com?subject=Develop a Website&body=Write about your website requirement or any queries...">
                             <span className="fa fa-code">
                                 {' '}Vrushang Patel
                             </span>
                         </a>
-                        <a className="btn btn-info btn-lg m-3 m-md-5" href="mailto: safalpatelsjp203039@gmail.com?subject=Develop a Website&body=Write about your website requirement or any queries...">
+                        <a className="btn btn-outline-light btn-lg m-3 m-md-5" href="mailto: safalpatelsjp203039@gmail.com?subject=Develop a Website&body=Write about your website requirement or any queries...">
                             <span className="fa fa-code">
                                 {' '}Safal Patel
                             </span>

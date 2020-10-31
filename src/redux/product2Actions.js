@@ -1,30 +1,31 @@
 import * as ActionTypes from './ActionTypes';
-import { baseUrl } from '../shared/baseUrl';
 
+import { firestore } from '../firebase/firebase';
 
 
 export const fetchCatagory2 = () => (dispatch) => {
 
     dispatch(catagoryLoading(true));
 
-    return fetch(baseUrl + 'CATAGORY2')
-    .then(response => {
-        if(response.ok){
-            return response;
-        }
-        else
-        {
-            var error  = new Error("Error " + response.status + ":" + response.statusText);
-            error.response = response;
-            throw error;
-        }
-    }, error => {
-        var errmess = new Error(error.message);
-        throw errmess;
+    return firestore.collection('CATAGORY2').get()
+    .then(snapshot => {
+
+        let catagory2 = [];
+        snapshot.forEach(doc => {
+
+            const data = doc.data();
+            console.log(data);
+            const _id = doc.id
+            catagory2.push({_id, ...data});
+            
+        });
+
+        return catagory2;
+
     })
-    .then(response => response.json())
     .then(CATAGORY2 => dispatch(addCatagory(CATAGORY2)))
     .catch(error => dispatch(catagoryFailed(error.message)));
+    
 }
 
 export const catagoryLoading = () => ({

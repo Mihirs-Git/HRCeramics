@@ -16,3 +16,4 @@ export const POST_RATINGS = 'POST_RATINGS';
 export const SHOW_RATINGS = 'SHOW_RATINGS';
 export const ADD_RATINGS = 'ADD_RATINGS';
 export const RATINGS_FAILED = 'RATINGS_FAILED';
+

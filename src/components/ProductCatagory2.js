@@ -6,23 +6,17 @@ import {
   import { Link } from 'react-router-dom';
   import { Loading } from './LoadingComponent';
   import { Fade  } from "react-awesome-reveal";
-  import { baseUrl } from '../shared/baseUrl';
-
 
 function RenderProductItem ({product}) {
     return (
         <Fade>
         <Card className='card-primary'>
             <Link to={`/product2/${product.id}`} >
-                <CardImg width="100%"className='cardimg' src={baseUrl+ product.image} alt={baseUrl+ product.name} />
-
-                <CardImgOverlay className="product-name">
-                    <CardTitle>{product.name}</CardTitle>
-                </CardImgOverlay>
-            </Link>            
-            <CardBody className='card-text'>
-                <CardText>{product.description}</CardText>
-           </CardBody>
+                <CardImg width="100%"className='cardimg' src={product.image} alt={product.name} />
+                <CardBody>
+                    <CardTitle className="card-title">{product.name}</CardTitle>
+                </CardBody>
+            </Link>
         </Card>
         </Fade>
     );
@@ -87,7 +81,7 @@ function Product2(props){
                     {product}
                 </div>
             </div>
-            <Jumbotron fluid className="text-center bg-cover mt-5 mb-5 jumbotron4"> 
+            <Jumbotron fluid className="text-center bg-cover mt-5 mb-0 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
                     <Button color="primary" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white">Explore by type</Button>
