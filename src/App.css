@@ -6,7 +6,7 @@
   background-color: #adb8c0;
 } */
 .navbar1{
-  background-color: black;
+  background-color: #26272b;
 }
 .cardtile{
   color: rgb(255, 255, 255);
@@ -24,12 +24,21 @@
   height: 95%;
   
 }
-.card-primary:link{
-  color: aliceblue;
-}
+
 .card-primary:hover {
-  box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
+  box-shadow: 0 40px 60px 20px rgba(12, 5, 62, 0.15);
   z-index: 100;
+  font-size: larger;
+}
+
+.price-unit
+{
+  font-size: x-small;
+  text-transform: uppercase;
+}
+
+.cardimg {
+  filter: brightness(50%); 
 }
 
 .card-text{
@@ -37,31 +46,39 @@
   font-size: 10px;
 }
 
-.card-title
+.card-heading-title
 {
-  color: black;
-  font-size: x-large;
+  color: #f7f7f7;
+  font-size: medium;
+  transition: linear ease-out 0.5s;
 }
 
+.card-heading-title:hover
+{
+  color: #f7f7f7;
+  text-decoration: none;
+  border-top: 2px solid #f7f7f7;
+  border-bottom: 2px solid #f7f7f7;
+}
 
-.card-primary:hover .card-title{
+.card-primary:hover{
   color: black;
   box-shadow: black;
 }
 
 .card-tabs{
-  font-size: xx-large;
+  font-size: x-large;
   /* color: #635b5b; */
   color: #ffffff;
 }
 .card-desc{
   color: #ffffff;
   /* color: rgb(70, 66, 66); */
-  font-size: large;
+  font-size: medium;
 }
 
 .card-bg{
-  background-image: linear-gradient(#6190E8, #A7BFE8)
+  background-image: linear-gradient(#6190E8, #A7BFE8);
 }
 
 /*Categories jumbotron css*/
@@ -104,13 +121,18 @@
 .sizejumbotron2{
   text-align: center;
   color: aliceblue;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fbackgroundforloading.jpg?alt=media&token=0ba0b41d-645a-482b-89b0-9299c4e66b54');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)), url('https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fbackgroundforloading.jpg?alt=media&token=0ba0b41d-645a-482b-89b0-9299c4e66b54');
   /* background-color: #1f1d1d; */
   /* background-color:rgb(148, 145, 145); */
   margin-bottom: 0;
   padding: 5%;
 }
 
+.product-title
+{
+  font-family: 'Segoe Print', 'Segoe UI', sans-serif;
+}
 
 .btngroup{
   background-color:rgb(78, 76, 76); ;
@@ -201,12 +223,33 @@ margin-bottom: 50px;
   text-align: justify;
 }
 
+/* .home-nav-offerings:hover
+{
+  background-color: #292b2c;
+  border-color: #292b2c;
+  color: #5cb85c;
+}
+
+.home-nav-offerings:active
+{
+  background-color: #292b2c;
+  border-color: #292b2c;
+  color: #5cb85c;
+} */
+
+.explore-buttons:hover
+{
+  background-color: #292b2c;
+  border-color: #292b2c;
+  color: #5cb85c;
+}
+
 .bg-cover {
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fsample.jpg?alt=media&token=13c70b62-3e2f-44bf-bf16-5941bce0dfba");
+  background-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5)), url("https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fsample.jpg?alt=media&token=bfa33257-c019-4c71-bab3-323b18cd6ed1");
 }
 
 .bg-cover-category
@@ -276,7 +319,7 @@ margin-bottom: 50px;
 .feature-title
 {
   color: #ffffff;
-  font-size: medium;
+  font-size: large;
   transition: linear ease-out 0.5s;
 }
 
@@ -353,8 +396,6 @@ margin-bottom: 50px;
   font-family: 'Lexend Peta', sans-serif;
 }
 
-
-
 /* safal */
 .row-header{
   margin:0px auto;
@@ -401,15 +442,20 @@ address{
   color: #fff;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
+.nav-header .nav-link:hover,
+.nav-header .nav-link:active {
   color: #887474;
+  background-color: #fff;
+  border-radius: 5%;
   text-decoration: none;
 }
 
 .navbar .navbar-brand {
   color: #fff;
+  font-family: 'Segoe Print', 'Segoe UI', sans-serif;
+  font-size: xx-large;
 }
+
 
 
 /* Change navbar styling on scroll */
@@ -442,6 +488,12 @@ address{
  
 .show.dropdown .dropdown-toggle::after {
   transform: translateY(3px);
+}
+
+.dropdown-item:hover
+{
+  background-color: #292b2c;
+  color: #f7f7f7;
 }
 
 .navbar-toggler{
@@ -607,7 +659,7 @@ address{
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:#f7f7f7;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -698,19 +750,14 @@ address{
 }
 .social-icons a.facebook:hover
 {
-  background-color:#3b5998
+  color:#0275d8;
+  background-color:#f7f7f7;
 }
-.social-icons a.twitter:hover
-{
-  background-color:#00aced
-}
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
+
 .social-icons a.dribbble:hover
 {
-  background-color:#ea4c89
+  color:#0275d8;
+  background-color:#f7f7f7;
 }
 @media (max-width:767px)
 {
@@ -737,6 +784,23 @@ address{
 }
 .jumbotron4{
   background-attachment: fixed;
+}
+
+.navbar-offerings:hover
+{
+  background-color: #0275d8;
+  color: #f7f7f7
+}
+
+.navbar-offerings:active
+{
+  background-color: #0275d8;
+  color: #f7f7f7
+}
+
+.product-category-link:hover
+{
+  text-decoration: none;
 }
 
 /*CAROUSEL BOOTSTRAP*/

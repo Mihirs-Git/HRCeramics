@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Card, CardImg, CardText, CardBody,
+    Card, CardImg,
     CardTitle, CardImgOverlay, Button,Jumbotron, Breadcrumb, BreadcrumbItem
   } from 'reactstrap';
   import { Link } from 'react-router-dom';
@@ -9,22 +9,24 @@ import {
 
 function RenderProductItem ({product}) {
     return (
-        <Fade>
-        <Card className='card-primary'>
-            <Link to={`/product2/${product.id}`} >
-                <CardImg width="100%"className='cardimg' src={product.image} alt={product.name} />
-                <CardBody>
-                    <CardTitle className="card-title">{product.name}</CardTitle>
-                </CardBody>
-            </Link>
-        </Card>
+        <Fade delay={1000} triggerOnce>
+            <div className="overflow">
+                <Card className="feature-card mt-2 mt-md-0">
+                    <Link className="product-category-link" to={`/product2/${product.id}`} >
+                        <CardImg width="100%"className='cardimg' src={product.image} alt={product.name} />
+                        <CardImgOverlay className="d-flex justify-content-center align-items-center">            
+                            <CardTitle className="card-heading-title">{product.name}</CardTitle>
+                       </CardImgOverlay>
+                    </Link>
+                </Card>
+            </div>
         </Fade>
     );
 };
 const JumbotronUse =(props)=>{
     return(
         <Jumbotron fluid className="m-0 bg-cover bg-cover-category text-white text-center">
-            <h1 className="pt-5"><strong>Categories</strong></h1>
+            <h1 className="pt-5 mt-4"><strong>Categories</strong></h1>
         </Jumbotron>
     )
 }
@@ -84,10 +86,10 @@ function Product2(props){
             <Jumbotron fluid className="text-center bg-cover mt-5 mb-0 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
-                    <Button color="primary" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white">Explore by type</Button>
+                    <Button color="light" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white explore-buttons">Explore by type</Button>
                     </Link>
                     <Link to={`/product2/`} >
-                    <Button color="primary" size="lg" outline className="ml-md-5 text-white">Explore by size</Button>
+                    <Button color="light" size="lg" outline className="ml-md-5 text-white explore-buttons">Explore by size</Button>
                     </Link>
                     </Jumbotron>
             </div>

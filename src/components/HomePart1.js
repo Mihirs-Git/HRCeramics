@@ -11,7 +11,7 @@ class Home1 extends Component{
         this.state = {
             tileName: 'Elevation',
             tileDescription: 'Elevation tiles design are one of the most natural and modern tiles that proves to be a great option and a unique choice. Elevation tiles design is created with the sense of grandeur and they really offer zenith designs. Elevation tiles also known as rustic tiles are substitute to natural stone.',
-
+            src: 'https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fcatagory%2Frsz_elevation.jpg?alt=media&token=70cb991f-d933-43c4-acfe-d3c72d9fce5d',
             isActive: {
                 elevation: true,
                 wooden: false,
@@ -23,7 +23,6 @@ class Home1 extends Component{
                 granite: false,
                 stair: false,
                 double_charge: false,
-                src: 'https://firebasestorage.googleapis.com/v0/b/hrceramics-ff4ff.appspot.com/o/assets%2Fcatagory%2Frsz_elevation.jpg?alt=media&token=70cb991f-d933-43c4-acfe-d3c72d9fce5d'
             }
 
         }
@@ -107,7 +106,6 @@ class Home1 extends Component{
                         parking: true,
                         sanitary: false,
                         decorative: false,
-                        decorative: false,
                         granite: false,
                         stair: false,
                         double_charge: false,
@@ -163,7 +161,7 @@ class Home1 extends Component{
                 });
                 break;
 
-                case "Stair": this.setState({
+                case "Stair Tiles": this.setState({
                     isActive: {
                         elevation: false,
                         wooden: false,
@@ -216,7 +214,7 @@ class Home1 extends Component{
         this.setState({
             tileName: selectedCategory.name,
             tileDescription: selectedCategory.description,
-            isActive: {src: selectedCategory.image }
+            src: selectedCategory.image 
         });
     }
 
@@ -242,13 +240,15 @@ class Home1 extends Component{
             else
             {
                 return(
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-6 mt-3">
                         <div className="overflow">
                             <Card className="feature-card mt-2 mt-md-0">
-                                <CardImg width="100%" src= {category.image} alt="Image" className="card-img-top"></CardImg>
-                                <CardImgOverlay className="d-flex justify-content-center align-items-center">
-                                    <Link to={`/product1/${category.id}`} className="feature-title"><strong>{category.name}</strong></Link>
-                                </CardImgOverlay>    
+                                <Link to={`/product1/${category.id}`}>
+                                    <CardImg width="100%" src= {category.image} alt="Image" className="cardimg card-img-top"></CardImg>
+                                    <CardImgOverlay className="d-flex justify-content-center align-items-center">
+                                        <CardTitle  className="feature-title"><strong>{category.name}</strong></CardTitle>
+                                    </CardImgOverlay>    
+                                </Link>
                             </Card>
                         </div>
                     </div>
@@ -272,37 +272,37 @@ class Home1 extends Component{
                         
                     </div>
                     <div className="row">
-                        <Navbar className='navbartabs'>
-                            <Nav horizontal tabs>
+                        <Navbar>
+                            <Nav horizontal pills color="dark">
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.elevation} onClick={() => {this.updateInfo("Elevation")} }>Elevation Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.elevation} onClick={() => {this.updateInfo("Elevation")} }>Elevation Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.wooden} onClick={() => {this.updateInfo("Wooden & Matt")} }>Wooden Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.wooden} onClick={() => {this.updateInfo("Wooden & Matt")} }>Wooden Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.kitchen} onClick={() => {this.updateInfo("Kitchen")} }>Kitchen Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.kitchen} onClick={() => {this.updateInfo("Kitchen")} }>Kitchen Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.wall} onClick={() => {this.updateInfo("Floor Tiles")} }>Floor Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.wall} onClick={() => {this.updateInfo("Floor Tiles")} }>Floor Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.parking} onClick={() => {this.updateInfo("Parking tile")} }>Parking Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.parking} onClick={() => {this.updateInfo("Parking tile")} }>Parking Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Sanitary")} } >Sanitary Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Sanitary")} } >Sanitary Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Double Charge")} } >Double Charge</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.double_charge} onClick={() => {this.updateInfo("Double Charge")} } >Double Charge</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Decorative")} } >Decor - Piece</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.decorative} onClick={() => {this.updateInfo("Decorative")} } >Decor - Pieces</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Stair Tiles")} } >Stairway Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.stair} onClick={() => {this.updateInfo("Stair Tiles")} } >Stairway Tiles</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Granite")} } >Granite</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.granite} onClick={() => {this.updateInfo("Granite")} } >Granite</NavLink>
                                 </NavItem>
                             </Nav>
                         </Navbar>
@@ -310,14 +310,14 @@ class Home1 extends Component{
                     <div className="row p-3">
                         <div className="overflow">
                             <CardGroup>
-                                <Card body inverse color="dark justifiedText">
+                                <Card body color="dark" className="justifiedText p-4">
                                     <CardTitle className="text-left card-tabs">{this.state.tileName}</CardTitle>
                                     <CardText className="card-desc">
                                         {this.state.tileDescription}
                                 </CardText>
                                 </Card>
                                 <Card className="info-card">
-                                   <CardImg width="100%" height="100%" src={this.state.isActive.src} alt="Image"></CardImg>
+                                   <CardImg width="100%" height="100%" src={this.state.src} alt="Image"></CardImg>
                                </Card>
                             </CardGroup>
                         </div>
@@ -327,10 +327,10 @@ class Home1 extends Component{
                 <Jumbotron fluid className="text-center bg-cover mt-5 mb-5 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
-                        <Button color="light" size="lg" outline className="mr-md-5 mb-md-0 mr-3">Explore by type</Button>
+                        <Button color="light" size="lg" outline className="mr-md-5 mb-md-0 mr-3 explore-buttons">Explore by type</Button>
                     </Link>
                     <Link to={`/product2/`} >
-                        <Button color="light" size="lg" outline className="ml-md-5">Explore by size</Button>
+                        <Button color="light" size="lg" outline className="ml-md-5 explore-buttons">Explore by size</Button>
                     </Link>
                 </Jumbotron>
                 

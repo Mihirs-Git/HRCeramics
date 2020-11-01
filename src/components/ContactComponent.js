@@ -4,7 +4,6 @@ import { Control, Errors, Form } from 'react-redux-form';
 import { Badge, Button, Jumbotron, Label, Toast, ToastBody } from 'reactstrap';
 //import {ReactBingmaps} from 'react-bingmaps';
 import * as emailjs from 'emailjs-com';
-import { Slide } from 'react-reveal';
 import { Fade } from 'react-awesome-reveal';
 
 
@@ -148,7 +147,7 @@ class Contact extends Component
 
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 mt-5 pt-5 mb-5 pl-4 pl-md-0">                    
+                        <div className="col-12 mt-5 pt-5 mb-2 mb-md-5 pl-4 pl-md-0">                    
                             <h2>Ways to contact us</h2>
                             <hr></hr>    
                         </div>    
@@ -343,10 +342,12 @@ class Contact extends Component
                         </div>
                     </div> */}
                     <Fade>
-                        <Jumbotron className="text-center m-0 jumbotron3">
-                            <a className="btn btn-outline-dark btn-md mt-5 mb-5" href="https://www.google.co.in/maps/dir//21.71525,73.0206944/@21.7152073,73.0206138,21z?hl=en-GB">
-                                View in Google Maps
-                            </a>
+                        <Jumbotron className="jumbotron3 text-right">
+                            <div className="p-0">
+                            <Badge color="success" pill href="https://www.google.co.in/maps/dir//21.71525,73.0206944/@21.7152073,73.0206138,21z?hl=en-GB">
+                               Click here to view in Google Maps
+                            </Badge>
+                            </div>
                         </Jumbotron>
                     </Fade>
                    

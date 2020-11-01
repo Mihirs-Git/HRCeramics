@@ -1,6 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 
-import { firestore, firebasestore } from '../firebase/firebase';
+import { firestore } from '../firebase/firebase';
 
 
 

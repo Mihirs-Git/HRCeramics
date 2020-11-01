@@ -105,10 +105,10 @@ render() {
                                                         catagoryLoading={this.props.catagory1.isLoading}
                                                         catagoryErrMess={this.props.catagory1.errMess}/> } />
               <Route exact path='/product1' component={() => 
-              <Product1 catagory1={this.props.catagory1.catagory1}
-              catagoryLoading={this.props.catagory1.isLoading}
-              catagoryErrMess={this.props.catagory1.errMess}
-               />} />
+                <Product1 catagory1={this.props.catagory1.catagory1}
+                catagoryLoading={this.props.catagory1.isLoading}
+                catagoryErrMess={this.props.catagory1.errMess}
+                />} />
               <Route path='/product1/:productId' component={ProductWithIdtt} />
               <Route exact path='/product2' component={() => 
               <Product2 catagory2={this.props.catagory2.catagory2}

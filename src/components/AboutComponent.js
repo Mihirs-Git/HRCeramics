@@ -29,24 +29,28 @@ class About extends Component
                                         HR Ceramic is a shop settled in Bharuch, Gujarat where you can find various kinds of ceramic and granite products. The products available at the shop are divided into several catgeories like elevation, decorative, wooden etc. You can see the various products in our category page. At our shop you will find the best of the products of all kinds. 
                                     </p>
                                     <br></br>
-                                    <p className="mb-2">
+                                    <p className="mb-2"> 
+                                        <span className="fa fa-user-o"></span>{' '}
                                         HR Ceramic is owned by:
                                     </p>
-                                    <div className="pl-3">
+                                    <div className="pl-4">
                                         <em>
                                             <h6>
+                                                <span className="fa fa-chevron-right"></span>{' '}
                                                 Meram Desai
                                             </h6>
                                             <h6>
+                                                <span className="fa fa-chevron-right"></span>{' '}
                                                 Kamlesh Upadhyay
                                             </h6>
                                         </em>
                                     </div>
                                     <br></br>
                                     <p className="mb-1">
-                                        You can find us at:    
+                                        <span className="fa fa-opencart"></span>{' '}
+                                        You can find us at: 
                                     </p>
-                                    <div className="pl-3 text-add">
+                                    <div className="pl-4 text-add">
                                         <address>
                                             <em>
                                                 1st Floor, Radha Krishna Shopping,<br></br>

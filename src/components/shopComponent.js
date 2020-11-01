@@ -6,7 +6,7 @@ import { Loading } from './LoadingComponent';
 const JumbotronUse =(props)=>{
     return(
         <Jumbotron fluid className="bg-cover bg-cover-gallery text-white text-center">
-            <h1 className="pt-5"><strong>Gallery</strong></h1>
+            <h1 className="pt-5 mt-5"><strong>Gallery</strong></h1>
         </Jumbotron>
     )
 }
@@ -67,9 +67,5 @@ function Shop(props){
 
         )
     }
-
-
-
-
 
 export default Shop;

@@ -1,6 +1,5 @@
 import React from "react";
 //import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 function NavBar(props)
  {
     //const location = useLocation();  
@@ -9,11 +8,11 @@ function NavBar(props)
         <header class="header">
             {/* {console.log(location.pathname)} */}
             {/* <nav class={(location.pathname === "/home")? "navbar navbar-expand-lg  fixed-top py-2":"navbar navbar-expand-lg navbar1 fixed-top py-2"} > */}
-            <nav class="navbar navbar-expand-lg navbar1 fixed-top pb-3">
+            <nav class="navbar navbar-expand-lg navbar1 fixed-top pb-3 nav-header">
                 <div class="container">
                     
-                    <a href="/home" class="navbar-brand font-weight-bold">
-                       HRCeramics
+                    <a href="/home" class="navbar-brand font-weight-bold home-title">
+                       HR Ceramics
                     </a>
                     
                     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
@@ -28,7 +27,7 @@ function NavBar(props)
                             </li>
             
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-uppercase font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle text-uppercase font-weight-bold" href="/home" id="navbardrop" data-toggle="dropdown">
                                     Categories
                                 </a>
                                 <div class="dropdown-menu">

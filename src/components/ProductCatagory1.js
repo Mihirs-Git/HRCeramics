@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardImgOverlay, Button,Jumbotron, Container, Breadcrumb, BreadcrumbItem, CardHeader
+    Card, CardImg,
+    CardTitle, CardImgOverlay, Button,Jumbotron, Breadcrumb, BreadcrumbItem
   } from 'reactstrap';
   import { Link } from 'react-router-dom';
   import { Loading } from './LoadingComponent';
@@ -12,15 +12,18 @@ function RenderProductItem ({product}) {
     
     return (
         <Fade delay={1000} triggerOnce>
-            <Card className='card-primary'>
-                <Link className="product-category1-link" to={`/product1/${product.id}`} >
-                    <CardImg width="100%" className='cardimg' src={product.image} alt={product.name} />   
-                    <CardBody>
-                        <CardTitle className="card-title">{product.name}</CardTitle>
-                        <CardText className='card-text justifiedText'>{product.description}</CardText>
-                    </CardBody>
-                </Link>                   
-            </Card>
+            <div className="overflow">
+                <Card className="feature-card mt-2 mt-md-0">
+                    <Link className="product-category-link" to={`/product1/${product.id}`} > 
+                        <CardImg width="100%" className='cardimg' src={product.image} alt={product.name} />   
+                        <CardImgOverlay className="d-flex justify-content-center align-items-center">
+                        
+                              <CardTitle className="card-heading-title">{product.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Link>
+                                           
+                </Card>
+            </div>
         </Fade >
     );
 };
@@ -28,7 +31,7 @@ function RenderProductItem ({product}) {
 const JumbotronUse =({isLoading,errMess})=>{
     return(
         <Jumbotron fluid className="bg-cover bg-cover-category text-white text-center">
-            <h1 className="pt-5"><strong>Categories</strong></h1>
+            <h1 className="pt-5 mt-4"><strong>Categories</strong></h1>
         </Jumbotron>
     )
 }
@@ -89,10 +92,10 @@ function Product1(props){
                 <Jumbotron fluid className="text-center bg-cover mt-5 mb-0 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
-                        <Button color="primary" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white">Explore by type</Button>
+                        <Button color="light" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white explore-buttons">Explore by type</Button>
                     </Link>
                     <Link to={`/product2/`} >
-                        <Button color="primary" size="lg" outline className="ml-md-5 text-white">Explore by size</Button>
+                        <Button color="light" size="lg" outline className="ml-md-5 text-white explore-buttons">Explore by size</Button>
                     </Link>
                 </Jumbotron>
                 </div>
