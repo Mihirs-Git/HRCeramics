@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardGroup, CardImg, CardText, CardTitle, Navbar,Nav, NavItem, NavLink, Button, CardImgOverlay, Jumbotron} from 'reactstrap';
+import { Fade } from 'react-awesome-reveal';
 import { Loading } from './LoadingComponent';
 
 class Home1 extends Component{
@@ -242,14 +243,16 @@ class Home1 extends Component{
                 return(
                     <div className="col-12 col-md-6 mt-3">
                         <div className="overflow">
-                            <Card className="feature-card mt-2 mt-md-0">
-                                <Link to={`/product1/${category.id}`}>
-                                    <CardImg width="100%" src= {category.image} alt="Image" className="cardimg card-img-top"></CardImg>
-                                    <CardImgOverlay className="d-flex justify-content-center align-items-center">
-                                        <CardTitle  className="feature-title"><strong>{category.name}</strong></CardTitle>
-                                    </CardImgOverlay>    
-                                </Link>
-                            </Card>
+                            <Fade cascade>
+                                <Card className="feature-card mt-2 mt-md-0">
+                                    <Link to={`/product1/${category.id}`}>
+                                        <CardImg width="100%" src= {category.image} alt="Image" className="cardimg card-img-top"></CardImg>
+                                        <CardImgOverlay className="d-flex justify-content-center align-items-center">
+                                            <CardTitle  className="feature-title"><strong>{category.name}</strong></CardTitle>
+                                        </CardImgOverlay>    
+                                    </Link>
+                                </Card>
+                            </Fade>
                         </div>
                     </div>
                 );
@@ -273,53 +276,56 @@ class Home1 extends Component{
                     </div>
                     <div className="row">
                         <Navbar>
-                            <Nav horizontal pills color="dark">
+                            <div className="col-12 nav nav-tabs">
+                                
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.elevation} onClick={() => {this.updateInfo("Elevation")} }>Elevation Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.elevation} onClick={() => {this.updateInfo("Elevation")} }>Elevation</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.wooden} onClick={() => {this.updateInfo("Wooden & Matt")} }>Wooden Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.kitchen} onClick={() => {this.updateInfo("Kitchen")} }>Kitchen</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.kitchen} onClick={() => {this.updateInfo("Kitchen")} }>Kitchen Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.wooden} onClick={() => {this.updateInfo("Wooden & Matt")} }>Wooden</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.wall} onClick={() => {this.updateInfo("Floor Tiles")} }>Floor Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.stair} onClick={() => {this.updateInfo("Stair Tiles")} } >Stairway</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.parking} onClick={() => {this.updateInfo("Parking tile")} }>Parking Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.wall} onClick={() => {this.updateInfo("Floor Tiles")} }>Flooring</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Sanitary")} } >Sanitary Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.sanitary} onClick={() => {this.updateInfo("Sanitary")} } >Sanitary</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.double_charge} onClick={() => {this.updateInfo("Double Charge")} } >Double Charge</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.parking} onClick={() => {this.updateInfo("Parking tile")} }>Parking</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.decorative} onClick={() => {this.updateInfo("Decorative")} } >Decor - Pieces</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="navbar-offerings" active={this.state.isActive.stair} onClick={() => {this.updateInfo("Stair Tiles")} } >Stairway Tiles</NavLink>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.decorative} onClick={() => {this.updateInfo("Decorative")} } >Decorative</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="navbar-offerings" active={this.state.isActive.granite} onClick={() => {this.updateInfo("Granite")} } >Granite</NavLink>
                                 </NavItem>
-                            </Nav>
+                                <NavItem>
+                                    <NavLink className="navbar-offerings" active={this.state.isActive.double_charge} onClick={() => {this.updateInfo("Double Charge")} } >Double Charge</NavLink>
+                                </NavItem>
+                            </div>
                         </Navbar>
                     </div>
                     <div className="row p-3">
                         <div className="overflow">
-                            <CardGroup>
-                                <Card body color="dark" className="justifiedText p-4">
-                                    <CardTitle className="text-left card-tabs">{this.state.tileName}</CardTitle>
-                                    <CardText className="card-desc">
-                                        {this.state.tileDescription}
-                                </CardText>
+                            <Fade cascade>
+                                <CardGroup>
+                                    <Card body color="dark" className="justifiedText p-4">
+                                        <CardTitle className="text-left card-tabs">{this.state.tileName}</CardTitle>
+                                        <CardText className="card-desc">
+                                            {this.state.tileDescription}
+                                    </CardText>
+                                    </Card>
+                                    <Card className="info-card">
+                                    <CardImg width="100%" height="100%" src={this.state.src} alt="Image"></CardImg>
                                 </Card>
-                                <Card className="info-card">
-                                   <CardImg width="100%" height="100%" src={this.state.src} alt="Image"></CardImg>
-                               </Card>
-                            </CardGroup>
+                                </CardGroup>
+                            </Fade>
                         </div>
                     </div>
                 </div> 

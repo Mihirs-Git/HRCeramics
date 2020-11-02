@@ -23,16 +23,7 @@ class Contact extends Component
             showFeedbackToast: false,
             showRatingToast: false,
             rating: 5,
-            map: {
-                bingmapKey: "Aivc_Y6gsUsOPIRdtvdwW4Tvz_g3p4pILk65NI5OTvxu-MauujPqg9ZPQDdaERZ8"/*"Aivc_Y6gsUsOPIRdtvdwW4Tvz_g3p4pILk65NI5OTvxu-MauujPqg9ZPQDdaERZ8"*/,
-                infoboxesWithPushPins: [
-                    {
-                        "location":[21.71525, 73.0185057], 
-                        "infoboxOption": { title: 'HR Ceramics', description: '1st Floor, Radhakrishna Shopping, Tulsidham, Zadeshwar Road, Bharuch-3920001' },
-                        "pushPinOption":{ title: 'HR Ceramics', description: 'Bharuch' }
-                    }
-                ],
-            }
+           
         }
         this.submitFeedback = this.submitFeedback.bind(this);
         this.changeRating = this.changeRating.bind(this);
@@ -262,9 +253,10 @@ class Contact extends Component
                                         validators={{required, validEmail}}></Control.text>
                                 </div>
                                 <div className="row form-group">
-                                    <Label htmlFor="comments" md={3} className="pl-1"><small>Optional Comments</small></Label>
+                                    <Label htmlFor="comments" md={3} className="pl-1">Comments<small>*</small></Label>
                                     <Errors md={9} className="text-danger align-self-center" model=".comments" show="touched"
                                             messages={{
+                                                required: " *Required ",
                                                 minLength: " *Minimum 0 characters",
                                                 maxLength: " *Maximum 200 characters"
                                             }}>
@@ -272,7 +264,7 @@ class Contact extends Component
                                     <Control.textarea model=".comments" name="comments" id="comments" 
                                         className="form-control" rows="3"
                                         placeholder="Why did you rate this much?"
-                                        validators={{minLength: minLength(0), maxLength: maxLength(200)}}></Control.textarea>
+                                        validators={{required, minLength: minLength(0), maxLength: maxLength(200)}}></Control.textarea>
                                 </div>
                                 <div className="row form-group">
                                     <div className="col-12 col-md-4 p-0">

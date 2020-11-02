@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Alert, Card, CardDeck, CardFooter, CardHeader, Jumbotron, UncontrolledCarousel } from 'reactstrap';
+import {Fade} from 'react-awesome-reveal';
 
 class Home2 extends Component
 {
@@ -60,26 +61,29 @@ class Home2 extends Component
             return(
                 
                 <div className="col-6 col-md-3 mt-3">
-                    <CardDeck>  
-                        <Card className="card-primary">
-                            <CardHeader className="p-4 text-center justify-content-center bg-dark text-white">
-                                <h4 className="m-0">&#8377;{' ' + category.price}<small className="price-unit"> {category.unit}</small></h4>
-                                <p className="m-0"><small>Price Range</small></p>
-                            </CardHeader>
-                            <CardFooter className="bg-light text-dark">
-                                <h5>{category.name}</h5>
-                                <small>Available Sizes: {category.size}</small>
-                                <br></br>
-                                <small>Offers: None</small>
-                            </CardFooter>
-                        </Card>
-                    </CardDeck>
+                    <Fade cascade>
+                        <CardDeck>  
+                            <Card className="card-primary">
+                                <CardHeader className="p-4 text-center justify-content-center bg-dark text-white">
+                                    <h4 className="m-0">&#8377;{' ' + category.price}<small className="price-unit"> {category.unit}</small></h4>
+                                    <p className="m-0"><small>Price Range</small></p>
+                                </CardHeader>
+                                <CardFooter className="bg-light text-dark">
+                                    <h5>{category.name}</h5>
+                                    <small>Available Sizes: {category.size}</small>
+                                    <br></br>
+                                    <small>Offers: None</small>
+                                </CardFooter>
+                            </Card>
+                        </CardDeck>
+                    </Fade>
                 </div>
             );
         })
 
         return(
             <React.Fragment>
+                <Fade cascade>
                 <div className="container">
                     <h4>Pricing Details</h4>
                     <div className="row">
@@ -90,7 +94,7 @@ class Home2 extends Component
                 <Jumbotron fluid className="m-0 p-0"> 
                     <UncontrolledCarousel items={items}></UncontrolledCarousel>
                 </Jumbotron>
-
+                </Fade>
             </React.Fragment>
         )
     }

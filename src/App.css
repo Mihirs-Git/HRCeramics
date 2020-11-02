@@ -445,7 +445,7 @@ address{
 .nav-header .nav-link:hover,
 .nav-header .nav-link:active {
   color: #887474;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-radius: 5%;
   text-decoration: none;
 }
@@ -786,21 +786,23 @@ address{
   background-attachment: fixed;
 }
 
-.navbar-offerings:hover
-{
-  background-color: #0275d8;
-  color: #f7f7f7
-}
-
-.navbar-offerings:active
-{
-  background-color: #0275d8;
-  color: #f7f7f7
-}
-
 .product-category-link:hover
 {
   text-decoration: none;
+}
+
+.nav-tabs > .nav-item > .nav-link {
+  color: #292b2c;
+}
+
+.nav-tabs > .nav-item > .nav-link.active {
+  background-color: #5cb85c;
+  color: #f7f7f7 ;
+}
+
+.nav-tabs > .nav-item > .nav-link:hover {
+  background-color: #5cb85c;
+  color: #f7f7f7 ;
 }
 
 /*CAROUSEL BOOTSTRAP*/

@@ -20,10 +20,10 @@ function NavBar(props)
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                            <a href="/home" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a>
+                                <a href="/home" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                            <a href="/about" class="nav-link text-uppercase font-weight-bold">About</a>
+                                <a href="/about" class="nav-link text-uppercase font-weight-bold">About</a>
                             </li>
             
                             <li class="nav-item dropdown">
@@ -49,10 +49,10 @@ function NavBar(props)
                             </li>
 
                             <li class="nav-item">
-                            <a href="/shop" class="nav-link text-uppercase font-weight-bold">Gallery</a>
+                                <a href="/shop" class="nav-link text-uppercase font-weight-bold">Gallery</a>
                             </li>
                             <li class="nav-item">
-                            <a href="/contact" class="nav-link text-uppercase font-weight-bold">Contact</a>
+                                <a href="/contact" class="nav-link text-uppercase font-weight-bold">Contact</a>
                             
                             </li>
                         </ul>
