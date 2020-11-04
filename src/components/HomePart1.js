@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardGroup, CardImg, CardText, CardTitle, Navbar,Nav, NavItem, NavLink, Button, CardImgOverlay, Jumbotron} from 'reactstrap';
+import { Card, CardGroup, CardImg, CardText, CardTitle, Navbar, NavItem, NavLink, Button, CardImgOverlay, Jumbotron} from 'reactstrap';
 import { Fade } from 'react-awesome-reveal';
 import { Loading } from './LoadingComponent';
 
@@ -277,7 +277,6 @@ class Home1 extends Component{
                     <div className="row">
                         <Navbar>
                             <div className="col-12 nav nav-tabs">
-                                
                                 <NavItem>
                                     <NavLink className="navbar-offerings" active={this.state.isActive.elevation} onClick={() => {this.updateInfo("Elevation")} }>Elevation</NavLink>
                                 </NavItem>
