@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardGroup, CardImg, CardText, CardTitle, Navbar, NavItem, NavLink, Button, CardImgOverlay, Jumbotron} from 'reactstrap';
+import { Card, CardGroup, CardImg, CardText, CardTitle, Navbar, NavItem, NavLink, CardImgOverlay, Jumbotron} from 'reactstrap';
 import { Fade } from 'react-awesome-reveal';
 import { Loading } from './LoadingComponent';
 
@@ -332,10 +332,10 @@ class Home1 extends Component{
                 <Jumbotron fluid className="text-center bg-cover mt-5 mb-5 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
-                        <a className="btn btn-outline-light btn-lg mr-md-5 mb-md-0 mr-3 mb-3 explore-buttons">Explore by type</a>
+                        <span className="btn btn-outline-light btn-lg mr-md-5 mb-md-0 mr-3 mb-3 explore-buttons">Explore by type</span>
                     </Link>
                     <Link to={`/product2/`} >
-                        <a className="btn btn-outline-light btn-lg ml-md-5 mb-md-0 mr-3 mb-3 explore-buttons">Explore by size</a>
+                        <span className="btn btn-outline-light btn-lg ml-md-5 mb-md-0 mr-3 mb-3 explore-buttons">Explore by size</span>
                     </Link>
                 </Jumbotron>
                 
