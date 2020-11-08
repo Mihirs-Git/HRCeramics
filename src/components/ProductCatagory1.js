@@ -92,10 +92,10 @@ function Product1(props){
                 <Jumbotron fluid className="text-center bg-cover mt-5 mb-0 jumbotron4"> 
                     <h4 className="mb-4 text-white">EXPLORE ALL OUR PRODUCTS</h4>
                     <Link to={`/product1/`} >
-                        <Button color="light" size="lg" outline className="mr-md-5 mb-md-0 mr-3 text-white explore-buttons">Explore by type</Button>
+                        <a className="btn btn-outline-light btn-lg mr-md-5 mb-md-0 mr-3 mb-3 explore-buttons">Explore by type</a>
                     </Link>
                     <Link to={`/product2/`} >
-                        <Button color="light" size="lg" outline className="ml-md-5 text-white explore-buttons">Explore by size</Button>
+                        <a className="btn btn-outline-light btn-lg ml-md-5 mb-md-0 mr-3 mb-3 explore-buttons">Explore by size</a>
                     </Link>
                 </Jumbotron>
                 </div>

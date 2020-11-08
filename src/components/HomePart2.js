@@ -60,7 +60,7 @@ class Home2 extends Component
         const displayCategory = this.props.categories.map((category) => {
             return(
                 
-                <div className="col-6 col-md-3 mt-3">
+                <div className="col-10 offset-1 offset-md-0 col-md-3 mt-3">
                     <Fade cascade>
                         <CardDeck>  
                             <Card className="card-primary">
